@@ -55,18 +55,17 @@ jobs:
             update.json > tmp.json && mv tmp.json update.json
 
       - name: Update changelog.md (prepend)
+        env:
+          CHANGELOG_NOTES: ${{ github.event.inputs.changelog_notes }}
         run: |
           {
             echo "## ${{ github.event.inputs.version }} ($(date +'%Y-%m-%d'))"
             echo
-            # keep raw notes, allow "*" bullets
-            cat <<'EOF'
-            ${{ github.event.inputs.changelog_notes }}
-            EOF
+            printf "%s\n" "$CHANGELOG_NOTES"
             echo
-            } > new_entry.txt
+          } > new_entry.txt
           cat new_entry.txt changelog.md > temp_changelog.md && mv temp_changelog.md changelog.md
-
+    
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -87,13 +86,13 @@ jobs:
         # => oneplus13t-fix-camera-vX.Y.Z.zip
 
       - name: Prepare release body
+        env:
+          CHANGELOG_NOTES: ${{ github.event.inputs.changelog_notes }}
         run: |
           {
             echo "## ${{ github.event.inputs.version }} ($(date +'%Y-%m-%d'))"
             echo
-            cat <<'EOF'
-            ${{ github.event.inputs.changelog_notes }}
-            EOF
+            printf "%s\n" "$CHANGELOG_NOTES"
           } > RELEASE_BODY.md
 
       - name: Create GitHub Release and upload asset
