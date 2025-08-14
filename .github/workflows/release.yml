@@ -61,10 +61,10 @@ jobs:
             echo
             # keep raw notes, allow "*" bullets
             cat <<'EOF'
-${{ github.event.inputs.changelog_notes }}
-EOF
+            ${{ github.event.inputs.changelog_notes }}
+            EOF
             echo
-          } > new_entry.txt
+            } > new_entry.txt
           cat new_entry.txt changelog.md > temp_changelog.md && mv temp_changelog.md changelog.md
 
       - name: Commit and push changes
@@ -92,8 +92,8 @@ EOF
             echo "## ${{ github.event.inputs.version }} ($(date +'%Y-%m-%d'))"
             echo
             cat <<'EOF'
-${{ github.event.inputs.changelog_notes }}
-EOF
+            ${{ github.event.inputs.changelog_notes }}
+            EOF
           } > RELEASE_BODY.md
 
       - name: Create GitHub Release and upload asset
