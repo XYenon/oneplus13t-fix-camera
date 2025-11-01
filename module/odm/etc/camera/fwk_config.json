@@ -103,6 +103,9 @@
             "com.tencent.qqmusic",
             "com.zing.zalo"
         ],
+        "privileged_app_list": [
+            "com.tencent.mm"
+        ],
         "disable_camera_shutter_sound_app_list": [
             "com.facebook.orca",
             "com.facebook.orca",
@@ -274,7 +277,7 @@
             "1920x1440"
         ]
     },
-    "com.jeyluta.timestampcameracnfree": {
+    "com.jeyluta.timestampcamerafree": {
         "previewSizeForAPI1Width": 4096,
         "previewSizeForAPI1Height": 3072,
         "resolutionFilterForNotAddSizeAPI1": [
@@ -295,6 +298,13 @@
     },
     "com.pinterest": {
         "previewSizeForAPI1Width": 2160,
+        "previewSizeForAPI1Height": 1080,
+        "resolutionFilterForNotAddSizeAPI1": [
+            "1440x1440"
+        ]
+    },
+    "com.cardfeed.video_public": {
+        "previewSizeForAPI1Width": 1920,
         "previewSizeForAPI1Height": 1080,
         "resolutionFilterForNotAddSizeAPI1": [
             "1440x1440"

@@ -46,7 +46,7 @@ jobs:
       - name: Update update.json (points to the release asset we'll upload)
         run: |
           ver="${{ github.event.inputs.version }}"   # e.g., v1.2.3
-          zip_url="https://github.com/kinginu/oneplus13t-fix-camera/releases/download/${ver}/oneplus13t-fix-camera-${ver}.zip"
+          zip_url="https://github.com/XYenon/oneplus13t-fix-camera/releases/download/${ver}/oneplus13t-fix-camera-${ver}.zip"
           jq \
             --arg ver "$ver" \
             --arg code "${{ steps.versioning.outputs.new_code }}" \
