@@ -1,3 +1,7 @@
+## v2.0.1 (2025-11-16)
+
+* updated odm files from COS 16.0.1.301
+
 ## v2.0.0 (2025-11-01)
 
 * updated odm files from COS 16.0.0.212
